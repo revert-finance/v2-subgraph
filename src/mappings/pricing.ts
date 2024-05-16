@@ -4,8 +4,8 @@ import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts/index'
 import { Bundle, Pair, Token } from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ONE_BD, UNTRACKED_PAIRS, ZERO_BD } from './helpers'
 
-const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
-const USDC_WETH_PAIR = '0x45dda9cb7c25131df268515131f647d726f50608'
+const WETH_ADDRESS = '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619'
+const USDC_WETH_PAIR = '0x67473ebdbfd1e6fc4367462d55ed1ee56e1963fa'
 
 export function getEthPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(USDC_WETH_PAIR) // usdc is token0
@@ -21,7 +21,8 @@ let WHITELIST: string[] = [
   '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270', // WMATIC
   '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619', // WETH
   '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063', // DAI
-  '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // USDC
+  '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // USDC bridged
+  '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359', // USDC
   '0xc2132d05d31c914a87c6611c10748aeb04b58e8f', // USDT
   '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',  // WBTC
 ]
