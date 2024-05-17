@@ -5,12 +5,12 @@ import { Bundle, Pair, Token } from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ONE_BD, UNTRACKED_PAIRS, ZERO_BD } from './helpers'
 
 const WETH_ADDRESS = '0x82af49447d8a07e3bd95bd0d56f35241523fbab1'
-const USDC_WETH_PAIR = '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc'
+const USDC_WETH_PAIR = '0xf64dfe17c8b87f012fcf50fbda1d62bfa148366a'
 
 export function getEthPriceInUSD(): BigDecimal {
-  let usdcPair = Pair.load(USDC_WETH_PAIR) // usdc is token0
+  let usdcPair = Pair.load(USDC_WETH_PAIR) // usdc is token1
   if (usdcPair !== null) {
-    return usdcPair.token0Price
+    return usdcPair.token1Price
   } else {
     return ZERO_BD
   }
