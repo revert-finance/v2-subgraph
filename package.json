@@ -6,7 +6,7 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "deploy": "graph deploy --studio uniswap-v2-polygon"
+    "deploy": "graph deploy --studio uniswap-v2-arbitrum"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.64.1",

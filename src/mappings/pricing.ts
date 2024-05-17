@@ -4,8 +4,8 @@ import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts/index'
 import { Bundle, Pair, Token } from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ONE_BD, UNTRACKED_PAIRS, ZERO_BD } from './helpers'
 
-const WETH_ADDRESS = '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619'
-const USDC_WETH_PAIR = '0x67473ebdbfd1e6fc4367462d55ed1ee56e1963fa'
+const WETH_ADDRESS = '0x82af49447d8a07e3bd95bd0d56f35241523fbab1'
+const USDC_WETH_PAIR = '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc'
 
 export function getEthPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(USDC_WETH_PAIR) // usdc is token0
@@ -18,13 +18,12 @@ export function getEthPriceInUSD(): BigDecimal {
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270', // WMATIC
-  '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619', // WETH
-  '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063', // DAI
-  '0x2791bca1f2de4661ed88a30c99a7a9449aa84174', // USDC bridged
-  '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359', // USDC
-  '0xc2132d05d31c914a87c6611c10748aeb04b58e8f', // USDT
-  '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',  // WBTC
+  '0x82af49447d8a07e3bd95bd0d56f35241523fbab1', // WETH
+  '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1', // DAI
+  '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8', // USDC bridged
+  '0xaf88d065e77c8cc2239327c5edb3a432268e5831', // USDC
+  '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9', // USDT
+  '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',  // WBTC
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
